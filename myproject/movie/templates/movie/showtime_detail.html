@@ -1,0 +1,13 @@
+!-- movie_booking_app/templates/movie_booking_app/showtime_detail.html -->
+{% extends 'movie/base.html' %}
+
+{% block content %}
+<h2>{{ movie.title }}</h2>
+<p>Genre: {{ movie.genre }}</p>
+<h3>Showtimes</h3>
+<ul>
+    {% for showtime in showtimes %}
+    <li>{{ showtime.time }} - Screen: {{ showtime.screen.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

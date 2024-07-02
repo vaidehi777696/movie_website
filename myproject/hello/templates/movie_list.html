@@ -1,0 +1,13 @@
+<!-- movie_booking_app/templates/movie_booking_app/movie_list.html -->
+{% extends 'movie/base.html' %}
+
+{% block content %}
+<h2>Available Movies</h2>
+<ul>
+    {% for movie in movies %}
+    <li>
+        <a href="{% url 'showtime_detail' movie.id %}">{{ movie.title }}</a> - {{ movie.genre }}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
